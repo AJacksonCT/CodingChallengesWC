@@ -8,9 +8,14 @@ namespace WC
 {
     public class WcImplementation
     {
-        public int GetCharacterCount(string charactersToCount)
+        public int GetByteCount(string fileName)
         {
-            throw new NotImplementedException();
+            var fileBytes = File.ReadAllBytes(fileName);
+            return GetByteCount(fileBytes);
+        }
+        public int GetByteCount(byte[] bytesToCount)
+        {
+            return bytesToCount.Length;
         }
     }
 }
