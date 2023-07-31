@@ -381,6 +381,16 @@
             "related": ".xml"
           }
         }
+      },
+      "WC/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/WC.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WC.dll": {}
+        }
       }
     }
   },
@@ -975,6 +985,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "WC/1.0.0": {
+      "type": "project",
+      "path": "../WC/WC.csproj",
+      "msbuildProject": "../WC/WC.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -983,6 +998,7 @@
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
       "NUnit3TestAdapter >= 4.4.2",
+      "WC >= 1.0.0",
       "coverlet.collector >= 3.2.0"
     ]
   },
@@ -1022,7 +1038,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\antho\\source\\repos\\CodingChallengesWC\\DotNetCore\\WC\\WC\\WC.csproj": {
+              "projectPath": "C:\\Users\\antho\\source\\repos\\CodingChallengesWC\\DotNetCore\\WC\\WC\\WC.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
