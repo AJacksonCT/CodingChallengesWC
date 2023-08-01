@@ -17,5 +17,16 @@ namespace WC
         {
             return bytesToCount.Length;
         }
+
+        public int GetLineCount(string fileName)
+        {
+            var fileString = File.ReadLines(fileName);
+            return GetLineCount(fileString);
+        }
+
+        public int GetLineCount(IEnumerable<string> linesToCount)
+        {
+            return linesToCount.Count();
+        }
     }
 }

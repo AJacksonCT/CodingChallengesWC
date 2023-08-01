@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WC": {
+      "commandName": "Project",
+      "commandLineArgs": "-c test.txt"
+    }
+  }
+}

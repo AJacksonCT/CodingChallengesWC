@@ -7,10 +7,29 @@ public class Program
 {
     static void Main(string[] args)
     {
-        if (args[0] == "-c")
+        var wc = new WcImplementation();
+
+        switch (args[0].ToLower())
         {
-            var wc = new WcImplementation();
-            Console.WriteLine(wc.GetByteCount(args[1]));
+            case "-c":
+            {
+
+                Console.WriteLine(wc.GetByteCount(args[1]));
+                break;
+            }
+            case "-l":
+            {
+                Console.WriteLine(wc.GetLineCount(args[1]));
+                break;
+            }
+            default:
+            {
+                Console.WriteLine("Invalid parameters");
+                break;
+            }
         }
+
+        //Pause for input, makes debugging easier
+        Console.ReadKey();
     }
 }

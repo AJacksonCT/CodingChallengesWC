@@ -6,6 +6,7 @@ namespace WCTests
     {
         private readonly string _filePath = AppDomain.CurrentDomain.BaseDirectory + "Test.txt";
         private string _stringToTest = "";
+        private string[] _linesToTest;
         private byte[] _bytesToTest;
         WcImplementation _wcImpl = new WcImplementation();
 
@@ -13,7 +14,8 @@ namespace WCTests
         public void Setup()
         {
             _bytesToTest = File.ReadAllBytes(_filePath);
-            _stringToTest = _bytesToTest.ToString()??"";
+            _stringToTest = File.ReadAllText(_filePath);
+            _linesToTest = File.ReadAllLines(_filePath);
 
         }
 
@@ -28,6 +30,19 @@ namespace WCTests
         {
             var byteCount = _wcImpl.GetByteCount(_filePath);
             Assert.That(byteCount, Is.EqualTo(341836));
+        }
+
+        [Test]
+        public void TestStep2_LinesCountFromArray()
+        {
+            var lineCount = _wcImpl.GetLineCount(_linesToTest);
+            Assert.That(lineCount, Is.EqualTo(7137));
+        }
+        [Test]
+        public void TestStep2_LinesCountFromFile()
+        {
+            var lineCount = _wcImpl.GetLineCount(_filePath);
+            Assert.That(lineCount,Is.EqualTo(7137));
         }
     }
 }
