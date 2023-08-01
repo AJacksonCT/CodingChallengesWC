@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace WC
@@ -32,12 +33,30 @@ namespace WC
 
         public int GetWordCountFromFile(string fileName)
         {
-            throw new NotImplementedException();
+            var fileString = File.ReadAllText(fileName);
+            return GetWordCount(fileString??"");
         }
 
         public int GetWordCount(string wordsToCount)
         {
-            throw new NotImplementedException();
+            var count = 0;
+           
+            wordsToCount = wordsToCount.ReplaceLineEndings(" ");
+            while (wordsToCount.Contains("  "))
+            {
+                wordsToCount = wordsToCount.Replace("  ", " ");
+            }
+
+            foreach (var character in wordsToCount.ToCharArray())
+            {
+                if (character == ' ')
+                    count++;
+            }
+            return count;
+
+            //var splitWords = wordsToCount.Split(" ");
+
+            //return splitWords.Length;
         }
     }
 }

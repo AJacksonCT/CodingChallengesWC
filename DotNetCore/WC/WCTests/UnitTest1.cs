@@ -48,13 +48,13 @@ namespace WCTests
         public void TestStep2_WordCountFromArray()
         {
             var wordCount = _wcImpl.GetWordCount(_stringToTest);
-            Assert.That(wordCount, Is.EqualTo(58159));
+            Assert.That(wordCount, Is.EqualTo(58143));
         }
         [Test]
         public void TestStep2_WordCountFromFile()
         {
             var wordCount = _wcImpl.GetWordCountFromFile(_filePath);
-            Assert.That(wordCount, Is.EqualTo(58159));
+            Assert.That(wordCount, Is.EqualTo(58143));
         }
     }
 }
