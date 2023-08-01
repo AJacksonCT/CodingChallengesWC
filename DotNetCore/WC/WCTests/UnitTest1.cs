@@ -44,5 +44,17 @@ namespace WCTests
             var lineCount = _wcImpl.GetLineCount(_filePath);
             Assert.That(lineCount,Is.EqualTo(7137));
         }
+        [Test]
+        public void TestStep2_WordCountFromArray()
+        {
+            var wordCount = _wcImpl.GetWordCount(_stringToTest);
+            Assert.That(wordCount, Is.EqualTo(58159));
+        }
+        [Test]
+        public void TestStep2_WordCountFromFile()
+        {
+            var wordCount = _wcImpl.GetWordCountFromFile(_filePath);
+            Assert.That(wordCount, Is.EqualTo(58159));
+        }
     }
 }

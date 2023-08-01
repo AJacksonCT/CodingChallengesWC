@@ -22,6 +22,11 @@ public class Program
                 Console.WriteLine(wc.GetLineCount(args[1]));
                 break;
             }
+            case "-w":
+            {
+                Console.WriteLine(wc.GetWordCountFromFile(args[1]));
+                break;
+            }
             default:
             {
                 Console.WriteLine("Invalid parameters");

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +28,16 @@ namespace WC
         public int GetLineCount(IEnumerable<string> linesToCount)
         {
             return linesToCount.Count();
+        }
+
+        public int GetWordCountFromFile(string fileName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetWordCount(string wordsToCount)
+        {
+            throw new NotImplementedException();
         }
     }
 }
