@@ -56,5 +56,17 @@ namespace WCTests
             var wordCount = _wcImpl.GetWordCountFromFile(_filePath);
             Assert.That(wordCount, Is.EqualTo(58143));
         }
+        [Test]
+        public void TestStep2_CharacterCountFromArray()
+        {
+            var characterCount = _wcImpl.GetCharacterCount(_stringToTest);
+            Assert.That(characterCount, Is.EqualTo(339120));
+        }
+        [Test]
+        public void TestStep2_CharacterCountFromFile()
+        {
+            var characterCount = _wcImpl.GetCharacterCountFromFile(_filePath);
+            Assert.That(characterCount, Is.EqualTo(339120));
+        }
     }
 }
