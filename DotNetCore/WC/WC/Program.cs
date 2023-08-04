@@ -34,7 +34,10 @@ public class Program
             }
             default:
             {
-                Console.WriteLine("Invalid parameters");
+                Console.Write(wc.GetByteCount(args[1]));
+                Console.Write("     " + wc.GetLineCount(args[1]));
+                Console.Write("     " + wc.GetWordCountFromFile(args[1]));
+                Console.WriteLine("     " + args[1]);
                 break;
             }
         }
