@@ -58,5 +58,15 @@ namespace WC
 
             //return splitWords.Length;
         }
+
+        public int GetCharacterCount(string charactersToCount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCharacterCountFromFile(string fileName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
