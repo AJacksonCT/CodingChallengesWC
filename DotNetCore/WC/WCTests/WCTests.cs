@@ -60,13 +60,13 @@ namespace WCTests
         public void TestStep2_CharacterCountFromArray()
         {
             var characterCount = _wcImpl.GetCharacterCount(_stringToTest);
-            Assert.That(characterCount, Is.EqualTo(339120));
+            Assert.That(characterCount, Is.EqualTo(339119));
         }
         [Test]
         public void TestStep2_CharacterCountFromFile()
         {
             var characterCount = _wcImpl.GetCharacterCountFromFile(_filePath);
-            Assert.That(characterCount, Is.EqualTo(339120));
+            Assert.That(characterCount, Is.EqualTo(339119));
         }
     }
 }

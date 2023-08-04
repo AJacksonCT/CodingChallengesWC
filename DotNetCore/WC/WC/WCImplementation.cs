@@ -61,12 +61,13 @@ namespace WC
 
         public int GetCharacterCount(string charactersToCount)
         {
-            throw new NotImplementedException();
+            return charactersToCount.Length;
         }
 
         public int GetCharacterCountFromFile(string fileName)
         {
-            throw new NotImplementedException();
+            var fileString = File.ReadAllText(fileName);
+            return GetCharacterCount(fileString ?? "");
         }
     }
 }
