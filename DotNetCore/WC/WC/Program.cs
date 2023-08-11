@@ -7,41 +7,32 @@ public class Program
 {
     static void Main(string[] args)
     {
-        var wc = new WcImplementation();
+        string? fileName = null;
+        string? input = null;
+        string[] commandLine = new string[args.Count()];
+        var counter = 0;
 
-        switch (args[0].ToLower())
+        foreach (string current in args)
         {
-            case "-c":
+            if (current.Contains("."))
+                fileName = current;
+            else
             {
-
-                Console.WriteLine(wc.GetByteCount(args[1]));
-                break;
-            }
-            case "-l":
-            {
-                Console.WriteLine(wc.GetLineCount(args[1]));
-                break;
-            }
-            case "-w":
-            {
-                Console.WriteLine(wc.GetWordCountFromFile(args[1]));
-                break;
-            }
-            case "-m":
-            {
-                Console.WriteLine(wc.GetCharacterCountFromFile(args[1]));
-                break;
-            }
-            default:
-            {
-                Console.Write(wc.GetByteCount(args[1]));
-                Console.Write("     " + wc.GetLineCount(args[1]));
-                Console.Write("     " + wc.GetWordCountFromFile(args[1]));
-                Console.WriteLine("     " + args[1]);
-                break;
+                commandLine[counter] = current;
+                counter++;
             }
         }
 
+        if (fileName == "")
+        {
+            Console.WriteLine("Enter your text");
+            input = Console.ReadKey().ToString();
+        }
+
+        var wc = new WcImplementation();
+
+        var result = wc.HandleArgs(fileName, input, commandLine);
+        Console.WriteLine(result);
         //Pause for input, makes debugging easier
         Console.ReadKey();
     }

@@ -28,7 +28,7 @@ namespace WCTests
         [Test]
         public void TestStep1_ByteCountFromFile()
         {
-            var byteCount = _wcImpl.GetByteCount(_filePath);
+            var byteCount = _wcImpl.GetByteCountFromFile(_filePath);
             Assert.That(byteCount, Is.EqualTo(341836));
         }
 
@@ -41,7 +41,7 @@ namespace WCTests
         [Test]
         public void TestStep2_LinesCountFromFile()
         {
-            var lineCount = _wcImpl.GetLineCount(_filePath);
+            var lineCount = _wcImpl.GetLineCountFromFile(_filePath);
             Assert.That(lineCount,Is.EqualTo(7137));
         }
         [Test]
